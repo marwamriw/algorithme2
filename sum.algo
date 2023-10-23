@@ -1,0 +1,41 @@
+ALGORITHM SUM_exercice
+VAR
+    T1,T2 :  ARRAY_OF INTEGER[20];  //declaring the two arrays and define length
+    SUM : INTEGER:0;  // declaring the sum variable to 0
+    i,j:INTEGER;   // declaring the index for each arrays
+BEGIN
+//inserting the elements in array 1
+  FOR i FROM 0 TO T1[lenght-1]  DO
+    write("enter elements of array 1")
+    read(T1[i])   //insert from user
+  END FOR
+  //inserting the elements in arrays 2
+  FOR j FROM 0 TO T2[lenght-1] DO
+    write("enter elements of array 2")
+    read(T2[j])   //insert from user
+  END FOR
+  //compare the elemnts  from array 1  with with elemnt in array 2
+    FOR i FROM 0 TO T1[lenght-1] DO
+      FOR j FROM 0 TO T2[lenght-1] DO
+        IF (T1[i] = t2[j]) THEN
+          write("the elements are equal")
+        END IF 
+          IF (T1[i] <> T2[j]) THEN   //the elements are not equal
+          SUM := SUM +T1[i] ;
+          END IF
+END FOR
+END FOR
+//compare the elements from array 2 with element in array1
+      FOR j FROM 0 TO T2[lenght-1] DO
+        FOR i  FROM 0 TO T1[lenght-1] DO
+        IF (t2[j] == T1[i]) THEN 
+            write("the elements are equal")
+        END IF 
+        IF (T2[j] <> T1[i]) THEN   // the elemnts are not equal
+            SUM := SUM+ T2[j] ;
+        END IF
+        END FOR
+      END FOR 
+      //affiche the result SUM
+      write("the element is",SUM);   
+END
