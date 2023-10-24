@@ -1,5 +1,5 @@
 // function to calculate the vectoriel sub algorithm
-FUNCTION dot_product (V1,V2: ARRAY_OF INTEGER): INTEGER
+FUNCTION dot_product (V1,V2: ARRAY_OF INTEGER): INTEGER    //passing by values
 VAR
 i,dot: INTEGER;
 BEGIN
@@ -16,35 +16,8 @@ BEGIN
     RETURN dot;     
 END
 
-// main algorithm
-ALGORITHM DOT
-VAR
-    V1,V2: ARRAY_OF INTEGER[20];   // declaration of two arrays
-    dot:INTEGER;
-    i,j: INTEGER;  // declaring the counter of elements in the array
-BEGIN
-// inserting the element in the array 1
-    FOR i FROM 0 TO V1.length-1 DO
-    write("enter the elements of array V1")
-    read(V1[i])   //insert from user
-    END FOR
-    //inserting the elements in the array 2
-    FOR j FROM 0 TO V2.length-1 DO
-    write("enter the elements of array V2")
-    read(V2[j])   // insert from user
-    END FOR
-    // call the function dot_product
-    dot:=dot_product(V1,V2)
-    // compare the result return  of function
-            IF (dot = 0 ) THEN
-                    write("V1 and V2 are orthogonal")
-                    ELSE
-                    write("V1 and V2 are not ortoghonal")
-            END IF
-END
-
 //  modify the function to PROCEDUE to calculate the vectoriel 
-PROCEDURE dot_product (V1,V2: ARRAY_OF INTEGER)
+PROCEDURE dot_product ( VAR V1,V2: ARRAY_OF INTEGER)     //passing by reference
 VAR
 i,dot: INTEGER;
 BEGIN
@@ -58,3 +31,37 @@ BEGIN
                 i:= i+1;
             UNTIL ( i> V1.length )    
 END
+
+
+
+// main algorithm
+ALGORITHM DOT
+VAR
+    V1,V2: ARRAY_OF INTEGER[20];     // declaration of two arrays
+    dot:INTEGER;
+    i,j: INTEGER;  // declaring the counter of elements in the array
+BEGIN
+// inserting the element in the array 1
+    FOR i FROM 0 TO V1.lenght step 1 DO
+    write("enter the elements of array V1")
+    read(V1[i])   //insert from user
+    END FOR
+    //inserting the elements in the array 2
+    FOR j FROM 0 TO V2.lenght step 1 DO
+    write("enter the elements of array V2")
+    read(V2[j])   // insert from user
+    END FOR
+    // call the function dot_product
+    dot:=dot_product(V1,V2)
+    //call the procedure dot_product
+    //dot_product(V1,V2)
+    
+    // compare the result return  of function
+            IF (dot = 0 ) THEN
+                    write("V1 and V2 are orthogonal")
+                    ELSE
+                    write("V1 and V2 are not ortoghonal")
+            END IF
+END
+
+
