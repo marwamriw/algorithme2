@@ -55,7 +55,7 @@ BEGIN
     dot:=dot_product(V1,V2)
     //call the procedure dot_product
     //dot_product(V1,V2)
-    2
+    
     // compare the result return  of function
             IF (dot = 0 ) THEN
                     write("V1 and V2 are orthogonal")
